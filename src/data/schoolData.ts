@@ -16,36 +16,47 @@ export const SCHOOL_INFO = {
   email: "ismloman@gmail.com",
   admissionsEmail: "admissions@isml-oman.com",
   website: "https://isml-oman.com",
-  principal: "Dr. Rajesh Sharma"
+  principal: "Dr. Nayer Iqbal, M.Sc., B.Ed., Ph.D.",
+  logo: "/assets/isml/logo.png",
+  crest: "/assets/isml/crest.png"
 };
 
 export const STUDENT_PERSONAS = [
   {
-    id: "robotics",
+    id: "science",
     name: "Aryan",
-    title: "Young Roboticist",
-    category: "STEM & Innovation",
-    image: "/src/assets/images/student_robotics_1790080038518.jpg",
-    quote: "Building autonomous rovers in the ISML MakerSpace gave me the confidence to compete globally.",
-    description: "National Science Congress finalist and captain of the school's robotics guild."
+    title: "Expert Scientist",
+    category: "STEM & Robotics",
+    image: "/assets/isml/students_activity.jpg",
+    quote: "Building autonomous systems in the ISML science lab gave me the confidence to present at the Oman Science Festival.",
+    description: "CBSE Science Congress finalist & student president of the Innovation Club."
   },
   {
-    id: "cricket",
-    name: "Aryan",
-    title: "Cricket Captain",
-    category: "Athletics & Sports",
-    image: "/src/assets/images/student_cricket_1790080058803.jpg",
-    quote: "On our 30-acre grounds, leadership isn't just taught in textbooks — it's forged on the field.",
-    description: "Opening batsman and captain of the Oman Inter-School Under-19 tournament squad."
+    id: "leadership",
+    name: "Fatima",
+    title: "Inspiring Leader",
+    category: "Debate & Model UN",
+    image: "/assets/isml/students_group.jpg",
+    quote: "On our 30-acre campus, leadership is forged through collaboration, house captaincy, and community projects.",
+    description: "Head Girl & Best Delegate at the Oman Inter-School Model United Nations."
   },
   {
     id: "scholar",
-    name: "Aryan",
-    title: "Olympiad Scholar",
-    category: "Academic Excellence",
-    image: "/src/assets/images/student_scholar_1790080077912.jpg",
-    quote: "Every teacher here invested in my curiosity, guiding me to top percentiles in CBSE and international math.",
-    description: "98.4% CBSE Board aggregate holder with admission offers from top global universities."
+    name: "Rohan",
+    title: "Academic Scholar",
+    category: "CBSE Pre-University",
+    image: "/assets/isml/senior_wing.jpg",
+    quote: "Every teacher invested in my curiosity, guiding me to top percentiles in CBSE Board examinations.",
+    description: "98.6% CBSE Board aggregate holder with distinctions in Mathematics and Physics."
+  },
+  {
+    id: "creative",
+    name: "Ananya",
+    title: "Creative Artist",
+    category: "Fine Arts & Cultural",
+    image: "/assets/isml/auditorium_events.jpg",
+    quote: "Expressing creativity through stage drama, visual arts, and classical music made my school years memorable.",
+    description: "First prize winner in Regional Youth Cultural Festival and Art Exhibition."
   }
 ];
 
@@ -109,9 +120,9 @@ export const SCHOOL_STAGES_LIST: SchoolStage[] = [
     id: "kindergarten",
     name: "Early Years & Kindergarten",
     years: "KG I & KG II",
-    tagline: "The formative spark of curiosity",
-    description: "Montessori-inspired, play-based early foundation building social emotional resilience, phonics, and hands-on discovery.",
-    image: "/src/assets/images/isml_library_arts_1790079295028.jpg",
+    tagline: "The formative spark of wonder & play",
+    description: "Montessori-inspired, joyful play environments fostering emotional resilience, phonics, number sense, and natural discovery.",
+    image: "/assets/isml/kg_park.jpg",
     age: "Ages 3 to 5",
     linkText: "Discover Kindergarten"
   },
@@ -119,19 +130,19 @@ export const SCHOOL_STAGES_LIST: SchoolStage[] = [
     id: "primary",
     name: "Primary Wing",
     years: "Grades 1 to 5",
-    tagline: "Foundations of inquiry & wonder",
-    description: "Engaging inquiry-driven curriculum with bilingual focus (English, Hindi, Arabic), mental math, robotics, and creative arts.",
-    image: "/src/assets/images/isml_stem_lab_1790079279748.jpg",
+    tagline: "Foundations of inquiry & conceptual growth",
+    description: "Experiential inquiry-driven learning featuring language mastery (English, Hindi, Arabic), computational logic, and environmental science.",
+    image: "/assets/isml/foundation_wing.jpg",
     age: "Ages 6 to 10",
-    linkText: "Explore Primary"
+    linkText: "Explore Primary Wing"
   },
   {
     id: "middle",
-    name: "Middle School",
+    name: "Middle School Wing",
     years: "Grades 6 to 8",
-    tagline: "Expanding horizons & critical thought",
-    description: "Specialist labs in Physics, Chemistry, Biology, and Computer Science alongside Model UN, debates, and competitive athletics.",
-    image: "/src/assets/images/isml_campus_hero_1790079262969.jpg",
+    tagline: "Expanding horizons & analytical thinking",
+    description: "Specialist laboratories in Physics, Chemistry, Biology, and Computer Science alongside Model UN, debates, and competitive athletics.",
+    image: "/assets/isml/middle_wing.jpg",
     age: "Ages 11 to 13",
     linkText: "Explore Middle School"
   },
@@ -139,11 +150,11 @@ export const SCHOOL_STAGES_LIST: SchoolStage[] = [
     id: "senior",
     name: "Senior & Pre-University",
     years: "Grades 9 to 12",
-    tagline: "Academic mastery & global university readiness",
-    description: "Rigorous CBSE Board preparation in Science and Commerce streams with dedicated competitive coaching for IIT-JEE, NEET, and SAT.",
-    image: "/src/assets/images/isml_sports_grounds_1790079309666.jpg",
+    tagline: "Academic distinction & global university readiness",
+    description: "Rigorous CBSE Board preparation in Science and Commerce streams with structured guidance for competitive exams and university admissions.",
+    image: "/assets/isml/senior_wing.jpg",
     age: "Ages 14 to 18",
-    linkText: "Senior Secondary Pathways"
+    linkText: "Senior Pathways"
   }
 ];
 
@@ -151,37 +162,37 @@ export const FEATURE_BLOCKS = [
   {
     id: "academic",
     title: "Academic excellence",
-    copy: "Students gain the knowledge, skills, qualifications and results to make their choices become reality. 100% CBSE pass rate with state toppers.",
+    copy: "Students gain the knowledge, skills, qualifications and results to make their choices become reality. 100% CBSE pass rate with regional top percentiles.",
     linkText: "Be your best",
-    image: "/src/assets/images/student_scholar_1790080077912.jpg",
+    image: "/assets/isml/senior_wing.jpg",
     accent: "#EB0F2D"
   },
   {
     id: "sports-cocurricular",
-    title: "Co-curricular life & sports",
-    copy: "Over 35 sporting disciplines, arts societies, orchestra, robotics guilds, and field expeditions on our extensive 30-acre campus.",
+    title: "Co-curricular life & eco campus",
+    copy: "Over 35 sporting disciplines, botanical gardens, arts societies, orchestra, robotics guilds, and field expeditions on our extensive 30-acre campus.",
     linkText: "Find your passion",
-    image: "/src/assets/images/student_cricket_1790080058803.jpg",
+    image: "/assets/isml/green_campus.jpg",
     accent: "#0F6EB6"
   },
   {
     id: "pastoral",
-    title: "Pastoral care & values",
-    copy: "A warm, family-oriented environment rooted in Indian cultural heritage and mutual respect, where every individual is known and supported.",
+    title: "Pastoral care & community",
+    copy: "A warm, supportive environment rooted in mutual respect, values, and student wellbeing, where every individual is known and empowered.",
     linkText: "Feel at home",
-    image: "/src/assets/images/isml_campus_hero_1790079262969.jpg",
+    image: "/assets/isml/canteen.jpg",
     accent: "#c5a059"
   }
 ];
 
 export const HEAD_LEADERSHIP = {
-  name: "Dr. Rajesh Sharma",
+  name: "Dr. Nayer Iqbal",
   title: "Principal & Head of Institution",
-  qualifications: "M.Sc., M.Ed., Ph.D., Recipient of CBSE National Best Teacher Award",
-  image: "/src/assets/images/head_portrait_1790080093386.jpg",
-  quote: "Welcome to Indian School Muladha. Learn more about our ethos, our standards and the people helping students to become the best versions of themselves.",
+  qualifications: "M.Sc., B.Ed., Ph.D.",
+  image: "/assets/isml/principal_dr_nayer.jpg",
+  quote: "Welcome to Indian School Muladha. Learn more about our ethos, our academic standards and the dedicated people helping our students to become confident, ethical global leaders.",
   linkText: "Meet our staff and management committee",
-  description: "At Indian School Muladha, we believe that education is not merely the accumulation of facts, but the ignition of innate human potential. For over three decades, our campus has stood as a beacon of academic excellence in South Batinah, nurturing generations of doctorates, engineers, diplomats, and ethical entrepreneurs."
+  description: "At Indian School Muladha, we believe that education is not merely the accumulation of facts, but the ignition of innate human potential. For over three decades, our 30-acre campus has stood as a beacon of academic distinction in South Batinah, nurturing generations of doctorates, engineers, diplomats, and responsible global citizens."
 };
 
 export const KEY_STATS: StatItem[] = [
@@ -195,29 +206,29 @@ export const KEY_STATS: StatItem[] = [
 export const LATEST_NEWS_WOODBRIDGE = [
   {
     id: "news-1",
-    date: "18 Sep 2026",
-    category: "Academic Triumph",
-    title: "ISML Scholars Clinch Top Honors at Oman Inter-School Science Quest 2026",
-    excerpt: "Senior Secondary physics and AI researchers from Indian School Muladha secure 1st place with an innovative seawater desalination automated model.",
-    image: "/src/assets/images/student_robotics_1790080038518.jpg",
+    date: "Sep 2026",
+    category: "Admissions Open",
+    title: "Registrations Open for Academic Session 2026-2027: KG to Grade XI",
+    excerpt: "Parents invited to apply online, tour the 30-acre campus, meet educators, and discover our pre-university science & commerce academic pathways.",
+    image: "/assets/isml/admission_poster.png",
     featured: true
   },
   {
     id: "news-2",
-    date: "12 Sep 2026",
-    category: "Sports & Athletics",
-    title: "Muladha Victorious in South Batinah CBSE Athletic Meet",
-    excerpt: "School cricket, badminton, and track teams bag 14 gold medals at the regional inter-school athletic championships.",
-    image: "/src/assets/images/student_cricket_1790080058803.jpg",
+    date: "Aug 2026",
+    category: "Campus Events",
+    title: "ISML Celebrates Vibrant Annual Cultural Day & Academic Honors",
+    excerpt: "Over 800 student performers showcased music, classical dance, and drama at the grand school auditorium before dignitaries and parents.",
+    image: "/assets/isml/auditorium_events.jpg",
     featured: false
   },
   {
     id: "news-3",
-    date: "04 Sep 2026",
-    category: "Admissions & Open Day",
-    title: "Registrations Open for Academic Session 2025-2026: KG to Grade XI",
-    excerpt: "Parents invited to tour the campus, meet teachers, and discover our pre-university science & commerce academic pathways.",
-    image: "/src/assets/images/isml_campus_hero_1790079262969.jpg",
+    date: "Aug 2026",
+    category: "Eco Campus",
+    title: "Live Green Initiative: Students Lead Sustainable Farming on 30-Acre Grounds",
+    excerpt: "Middle and Senior school eco-club students plant indigenous trees and automated drip irrigation systems promoting environmental stewardship.",
+    image: "/assets/isml/green_campus.jpg",
     featured: false
   }
 ];
@@ -225,21 +236,21 @@ export const LATEST_NEWS_WOODBRIDGE = [
 export const LATEST_NEWS: NewsItem[] = [
   {
     id: "1",
-    title: "ISML Scholars Clinch Top Honors at Oman Inter-School Science Quest 2026",
-    category: "Achievement",
-    date: "18 Sep 2026",
-    summary: "Senior Secondary physics researchers from Indian School Muladha secure 1st place with an automated seawater desalination model.",
+    title: "Registrations Open for Academic Session 2026-2027: KG to Grade XI",
+    category: "Admissions",
+    date: "Sep 2026",
+    summary: "Parents invited to apply online, tour the campus, meet teachers, and explore our academic programs.",
     readTime: "3 min read",
-    badge: "National Triumph"
+    badge: "Admissions 2026-27"
   },
   {
     id: "2",
-    title: "Muladha Victorious in South Batinah CBSE Athletic Meet",
-    category: "Sports",
-    date: "12 Sep 2026",
-    summary: "School cricket, badminton, and track teams bag 14 gold medals at the regional inter-school championships.",
+    title: "ISML Celebrates Annual Day & Academic Felicitations",
+    category: "Campus",
+    date: "Aug 2026",
+    summary: "Annual cultural festival honoring top CBSE achievers and extracurricular champions in the auditorium.",
     readTime: "2 min read",
-    badge: "14 Gold Medals"
+    badge: "Campus Festival"
   }
 ];
 
@@ -264,48 +275,92 @@ export const SENIOR_STREAMS: AcademicStream[] = [
 
 export const CAMPUS_HOTSPOTS: CampusHotspot[] = [
   {
-    id: "hero-quad",
-    name: "Main Academic Quadrangle",
-    category: "Academics",
-    description: "Collegiate landscaped courtyard flanked by native date palms and shaded arcades.",
-    image: "/src/assets/images/isml_campus_hero_1790079262969.jpg",
+    id: "main-gate",
+    name: "Main Campus Gate & Promenade",
+    category: "Campus",
+    description: "Grand architectural entrance welcoming students to our 30-acre campus in Al Muladha.",
+    image: "/assets/isml/main_gate.jpg",
     x: 48,
     y: 42,
-    features: ["Assembly Pavilion", "Administrative Wing", "Honor Roll Hall"],
-    quote: "A welcoming heart for school assemblies, cultural festivals, and community celebrations."
+    features: ["Security & Reception", "Promenade Walkway", "Administrative Wing"],
+    quote: "A welcoming gateway for over 3,200 students arriving each morning."
   },
   {
-    id: "stem-lab",
-    name: "Dr. A.P.J. Abdul Kalam STEM & AI Lab",
-    category: "Innovation",
-    description: "State-of-the-art robotics workshops, 3D printers, IoT prototyping stations, and high-performance computing clusters.",
-    image: "/src/assets/images/student_robotics_1790080038518.jpg",
+    id: "senior-wing",
+    name: "Senior Secondary Academic Complex",
+    category: "Academics",
+    description: "Spacious classrooms, science laboratories, and pre-university lecture halls for Grades 9 to 12.",
+    image: "/assets/isml/senior_wing.jpg",
     x: 68,
     y: 35,
-    features: ["3D Printing Array", "AI Robotics Arenas", "IoT Prototyping"],
-    quote: "Where students turn theoretical physics and algorithm design into functional prototypes."
+    features: ["Physics & Chem Labs", "Smart Board Classrooms", "Study Halls"],
+    quote: "Where high academic rigor meets world-class teaching methodologies."
   },
   {
-    id: "sports-ground",
-    name: "30-Acre Olympic Athletic Turf & Cricket Oval",
-    category: "Athletics",
-    description: "Lush natural turf cricket oval with floodlights, FIFA-specification football pitch, basketball court, and 400m running track.",
-    image: "/src/assets/images/isml_sports_grounds_1790079309666.jpg",
+    id: "middle-wing",
+    name: "Middle School Wing",
+    category: "Academics",
+    description: "Dedicated wing for Grades 6 to 8 fostering analytical problem-solving and peer collaboration.",
+    image: "/assets/isml/middle_wing.jpg",
+    x: 60,
+    y: 45,
+    features: ["Junior Science Lab", "Digital Learning Suites", "Library Access"],
+    quote: "Empowering adolescents to discover their intellectual passions."
+  },
+  {
+    id: "foundation-wing",
+    name: "Foundation & Primary Wing",
+    category: "Primary",
+    description: "Vibrant activity-driven learning environment for Grades 1 to 5.",
+    image: "/assets/isml/foundation_wing.jpg",
+    x: 40,
+    y: 55,
+    features: ["Interactive Display Boards", "Mathematics Lab", "Storytelling Arenas"],
+    quote: "Foundational wonder turning into lifelong curiosity."
+  },
+  {
+    id: "kg-park",
+    name: "Kindergarten Park & Activity Arena",
+    category: "Early Years",
+    description: "Lush outdoor play arena tailored for early motor development, sensory exploration, and games.",
+    image: "/assets/isml/kg_park.jpg",
     x: 32,
     y: 72,
-    features: ["Natural Grass Cricket Oval", "Floodlit Tennis Courts", "FIFA Football Pitch"],
-    quote: "Nurturing fitness, team spirit, and championship caliber in every student."
+    features: ["Safety Play Turfs", "Sensory Discovery Zones", "Shaded Playgrounds"],
+    quote: "Fostering joyful friendships and active play under the Oman sun."
   },
   {
-    id: "library",
-    name: "Rabindranath Tagore Digital Library",
-    category: "Arts",
-    description: "Housing over 25,000 volumes, international academic journals, quiet study carrels, and digital archives.",
-    image: "/src/assets/images/isml_library_arts_1790079295028.jpg",
+    id: "green-campus",
+    name: "Botanical Gardens & Eco Grounds",
+    category: "Environment",
+    description: "Extensive palm groves, landscaped flowerbeds, and sports pitches across the estate.",
+    image: "/assets/isml/green_campus.jpg",
     x: 52,
     y: 28,
-    features: ["25,000 Volumes", "Digital Research Pods", "Quiet Reading Carrels"],
-    quote: "A sanctuary of knowledge fostering independent critical thinking and research rigor."
+    features: ["Date Palm Groves", "Athletic Fields", "Eco Learning Pavilions"],
+    quote: "A green, serene sanctuary cultivating environmental respect."
+  },
+  {
+    id: "canteen",
+    name: "Campus Canteen & Dining Pavilion",
+    category: "Student Life",
+    description: "Hygienic, modern dining hall providing nutritious meals and a vibrant communal hub for students and faculty.",
+    image: "/assets/isml/canteen.jpg",
+    x: 75,
+    y: 60,
+    features: ["Hygienic Kitchen", "Spacious Seating", "Healthy Refreshments"],
+    quote: "Nourishing bodies and building community connections daily."
+  },
+  {
+    id: "auditorium",
+    name: "Grand School Auditorium & Cultural Hall",
+    category: "Arts & Culture",
+    description: "Full-scale theater hall hosting inter-school festivals, debate championships, and annual ceremonies.",
+    image: "/assets/isml/auditorium_events.jpg",
+    x: 45,
+    y: 20,
+    features: ["Acoustic Sound System", "Grand Stage", "Theater Lighting"],
+    quote: "Where students discover the confidence of the spotlight."
   }
 ];
 
@@ -316,7 +371,7 @@ export const DIVISIONS: Division[] = [
     subtitle: "Early Years Foundation",
     ageRange: "Ages 3 - 5",
     grades: "KG I & KG II",
-    image: "/src/assets/images/isml_library_arts_1790079295028.jpg",
+    image: "/assets/isml/kg_park.jpg",
     description: "A joyful world of sensory discovery and emotional development where early inquiry begins.",
     highlights: ["Play-based phonics", "Sensory math", "Creative storytelling"],
     keyCompetencies: ["Social confidence", "Motor skill coordination", "Multilingual curiosity"],
@@ -328,7 +383,7 @@ export const DIVISIONS: Division[] = [
     subtitle: "Foundational Inquiry",
     ageRange: "Ages 6 - 10",
     grades: "Grades 1 - 5",
-    image: "/src/assets/images/isml_stem_lab_1790079279748.jpg",
+    image: "/assets/isml/foundation_wing.jpg",
     description: "Building strong foundational competencies in languages, mathematics, and environmental science.",
     highlights: ["Experiential science", "Bilingual literacy", "Computational thinking"],
     keyCompetencies: ["Critical inquiry", "Team collaboration", "Mathematical reasoning"],

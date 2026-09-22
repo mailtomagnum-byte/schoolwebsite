@@ -93,28 +93,13 @@ export const WoodbridgeHeader: React.FC<WoodbridgeHeaderProps> = ({
             href="#"
             className="flex items-center gap-3 group text-center focus:outline-none"
           >
-            {/* Authentic Crest Graphic */}
-            <div className="w-10 h-12 relative flex-shrink-0">
-              <svg viewBox="0 0 100 120" className="w-full h-full drop-shadow-md">
-                <path
-                  d="M10 10 H90 V70 C90 98 50 115 50 115 C50 115 10 98 10 70 Z"
-                  fill="#000F29"
-                  stroke="#EB0F2D"
-                  strokeWidth="4"
-                />
-                <path
-                  d="M18 18 H82 V66 C82 90 50 104 50 104 C50 104 18 90 18 66 Z"
-                  fill="#00183f"
-                />
-                <path d="M50 18 V104" stroke="#c5a059" strokeWidth="2" strokeDasharray="3 2" />
-                <path d="M18 55 H82" stroke="#c5a059" strokeWidth="2" strokeDasharray="3 2" />
-                {/* Book / Light icon */}
-                <circle cx="50" cy="40" r="12" fill="#c5a059" />
-                <circle cx="50" cy="40" r="8" fill="#000F29" />
-                <text x="50" y="78" fill="#ffffff" fontSize="16" fontWeight="bold" textAnchor="middle" fontFamily="Poppins">
-                  ISML
-                </text>
-              </svg>
+            {/* Authentic ISML Crest Image */}
+            <div className="w-10 h-10 sm:w-11 sm:h-11 relative flex-shrink-0 bg-white/10 rounded-full p-1 border border-white/20">
+              <img
+                src="/assets/isml/crest.png"
+                alt="Indian School Muladha Crest"
+                className="w-full h-full object-contain drop-shadow"
+              />
             </div>
 
             <div className="text-left">

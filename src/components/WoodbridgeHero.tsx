@@ -41,29 +41,21 @@ export const WoodbridgeHero: React.FC<WoodbridgeHeroProps> = ({
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8 flex items-center gap-3"
+            className="mb-8 flex items-center gap-4"
           >
-            <div className="w-12 h-14 relative flex-shrink-0">
-              <svg viewBox="0 0 100 120" className="w-full h-full drop-shadow-lg">
-                <path
-                  d="M10 10 H90 V70 C90 98 50 115 50 115 C50 115 10 98 10 70 Z"
-                  fill="#000F29"
-                  stroke="#EB0F2D"
-                  strokeWidth="4"
-                />
-                <circle cx="50" cy="40" r="12" fill="#c5a059" />
-                <circle cx="50" cy="40" r="8" fill="#000F29" />
-                <text x="50" y="78" fill="#ffffff" fontSize="16" fontWeight="bold" textAnchor="middle" fontFamily="Poppins">
-                  ISML
-                </text>
-              </svg>
+            <div className="w-14 h-14 relative flex-shrink-0 bg-white/10 rounded-2xl p-1.5 border border-white/20 shadow-lg">
+              <img
+                src="/assets/isml/crest.png"
+                alt="Indian School Muladha Crest"
+                className="w-full h-full object-contain"
+              />
             </div>
-            <div className="border-l border-white/20 pl-3">
+            <div className="border-l border-white/20 pl-4">
               <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#c5a059] block">
                 Excellence in Oman Since 1991
               </span>
               <span className="text-xs text-white/70">
-                CBSE Affiliation No: 6130009
+                CBSE Affiliation No: 6130009 • School Code: 90076
               </span>
             </div>
           </motion.div>

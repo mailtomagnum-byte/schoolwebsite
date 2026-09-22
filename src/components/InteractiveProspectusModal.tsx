@@ -37,8 +37,8 @@ export const InteractiveProspectusModal: React.FC<InteractiveProspectusModalProp
     {
       title: "Welcome to Indian School Muladha",
       subtitle: "A Tradition of Distinction in the Sultanate of Oman",
-      badge: "Official Prospectus 2025-26",
-      image: "/src/assets/images/isml_campus_hero_1790079262969.jpg",
+      badge: "Official Prospectus 2026-27",
+      image: "/assets/isml/main_gate.jpg",
       content: (
         <div className="space-y-4 text-xs sm:text-sm text-[#cbd5e1] font-light leading-relaxed">
           <p>
@@ -64,7 +64,7 @@ export const InteractiveProspectusModal: React.FC<InteractiveProspectusModalProp
       title: "Academic Continuum & Pedagogy",
       subtitle: "From Foundational Wonder to Senior Scholastic Rigor",
       badge: "Curriculum Excellence",
-      image: "/src/assets/images/isml_library_arts_1790079295028.jpg",
+      image: "/assets/isml/senior_wing.jpg",
       content: (
         <div className="space-y-3 text-xs sm:text-sm text-[#cbd5e1] font-light leading-relaxed">
           <p>
@@ -91,7 +91,7 @@ export const InteractiveProspectusModal: React.FC<InteractiveProspectusModalProp
       title: "STEAM Innovation & Laboratories",
       subtitle: "Dr. A.P.J. Abdul Kalam Technology Hub",
       badge: "World-Class Infrastructure",
-      image: "/src/assets/images/isml_stem_lab_1790079279748.jpg",
+      image: "/assets/isml/students_activity.jpg",
       content: (
         <div className="space-y-4 text-xs sm:text-sm text-[#cbd5e1] font-light leading-relaxed">
           <p>
@@ -107,11 +107,11 @@ export const InteractiveProspectusModal: React.FC<InteractiveProspectusModalProp
       title: "Admissions & Comprehensive Bus Transit",
       subtitle: "Serving Families Across South Batinah Governorate",
       badge: "Enrollment Guide",
-      image: "/src/assets/images/isml_sports_grounds_1790079309666.jpg",
+      image: "/assets/isml/green_campus.jpg",
       content: (
         <div className="space-y-4 text-xs sm:text-sm text-[#cbd5e1] font-light leading-relaxed">
           <p>
-            Admissions for the 2025-26 academic year are currently open for Kindergarten through Grade 11.
+            Admissions for the 2026-27 academic year are currently open for Kindergarten through Grade 11.
           </p>
           <div>
             <h4 className="font-semibold text-white text-xs mb-1">GPS-Tracked Bus Network Routes:</h4>

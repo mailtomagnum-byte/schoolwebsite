@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { WoodbridgeHeader } from './components/WoodbridgeHeader';
 import { WoodbridgeHero } from './components/WoodbridgeHero';
+import { WoodbridgeShieldMask } from './components/WoodbridgeShieldMask';
 import { WoodbridgeStudentAnimation } from './components/WoodbridgeStudentAnimation';
 import { WoodbridgeScrollingText } from './components/WoodbridgeScrollingText';
 import { WoodbridgeTextAndLinksList } from './components/WoodbridgeTextAndLinksList';
@@ -50,46 +51,52 @@ export default function App() {
           onOpenProspectus={() => setIsProspectusOpen(true)}
         />
 
-        {/* 3. The Signature Student 3D Animation Panel: "Meet Aryan" -> Young Roboticist / Cricket Captain / Scholar */}
+        {/* 3. The 3D Shield Aperture Zoom Portal (Exact Woodbridge School block-shield-mask) */}
+        <WoodbridgeShieldMask
+          onOpenVirtualTour={() => handleOpenVirtualTour()}
+          onWatchVideo={() => setIsVideoModalOpen(true)}
+        />
+
+        {/* 4. The Signature Student 3D Animation Panel: "Meet Aryan" -> Expert Scientist / Inspiring Leader / Scholar / Artist */}
         <WoodbridgeStudentAnimation
           onOpenAdmissions={() => setIsAdmissionsOpen(true)}
         />
 
-        {/* 4. Horizontal Kinetic Scrolling Marquee Lines with script calligraphy accents */}
+        {/* 5. Horizontal Kinetic Scrolling Marquee Lines with script calligraphy accents */}
         <WoodbridgeScrollingText />
 
-        {/* 5. "Our students are our entire focus" with Stage Selector (Kindergarten to Senior Secondary) */}
+        {/* 6. "Our students are our entire focus" with Stage Selector (Kindergarten to Senior Secondary) */}
         <WoodbridgeTextAndLinksList
           onOpenAdmissions={() => setIsAdmissionsOpen(true)}
           onOpenProspectus={() => setIsProspectusOpen(true)}
         />
 
-        {/* 6. "Want to see for yourself?" with scrolling outline text "SET UP FOR LIFE" and Campus Film video button */}
+        {/* 7. "Want to see for yourself?" with scrolling outline text "SET UP FOR LIFE" and Campus Film video button */}
         <WoodbridgeFeaturedStrip
           onOpenAdmissions={() => setIsAdmissionsOpen(true)}
           onOpenVirtualTour={() => handleOpenVirtualTour()}
           onWatchVideo={() => setIsVideoModalOpen(true)}
         />
 
-        {/* 7. "Fresh thinking to help everyone learn and grow" 3 Featured Editorial Cards */}
+        {/* 8. "Fresh thinking to help everyone learn and grow" 3 Featured Editorial Cards */}
         <WoodbridgeFeaturedBlocks
           onOpenAdmissions={() => setIsAdmissionsOpen(true)}
           onOpenProspectus={() => setIsProspectusOpen(true)}
         />
 
-        {/* 8. "Meet the staff and management committee" Head of School Strip */}
+        {/* 9. "Meet the staff and management committee" Head of School Strip */}
         <WoodbridgeStaffStrip
           onOpenAdmissions={() => setIsAdmissionsOpen(true)}
         />
 
-        {/* 9. Latest News and Stories Gazette Grid */}
+        {/* 10. Latest News and Stories Gazette Grid */}
         <WoodbridgeNewsBlocks
           onOpenAdmissions={() => setIsAdmissionsOpen(true)}
         />
 
       </main>
 
-      {/* 10. Call-to-Action Strip & Footer */}
+      {/* 11. Call-to-Action Strip & Footer */}
       <WoodbridgeFooter
         onOpenAdmissions={() => setIsAdmissionsOpen(true)}
         onOpenProspectus={() => setIsProspectusOpen(true)}

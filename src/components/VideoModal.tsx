@@ -49,7 +49,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
         {/* Video Canvas Simulation */}
         <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden group">
           <img
-            src="/src/assets/images/isml_campus_hero_1790079262969.jpg"
+            src="/assets/isml/main_gate.jpg"
             alt="Campus Overview"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover filter brightness-[0.7]"

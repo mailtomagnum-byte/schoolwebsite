@@ -65,19 +65,12 @@ export const WoodbridgeFooter: React.FC<WoodbridgeFooterProps> = ({
           {/* Col 1: School Identity (4 cols) */}
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-12 relative flex-shrink-0">
-                <svg viewBox="0 0 100 120" className="w-full h-full drop-shadow-md">
-                  <path
-                    d="M10 10 H90 V70 C90 98 50 115 50 115 C50 115 10 98 10 70 Z"
-                    fill="#00183f"
-                    stroke="#EB0F2D"
-                    strokeWidth="4"
-                  />
-                  <circle cx="50" cy="40" r="10" fill="#c5a059" />
-                  <text x="50" y="78" fill="#ffffff" fontSize="16" fontWeight="bold" textAnchor="middle" fontFamily="Poppins">
-                    ISML
-                  </text>
-                </svg>
+              <div className="w-12 h-12 relative flex-shrink-0 bg-white/10 rounded-2xl p-1.5 border border-white/20 shadow-md">
+                <img
+                  src="/assets/isml/crest.png"
+                  alt="Indian School Muladha Crest"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <h4 className="font-poppins font-bold text-lg text-white uppercase tracking-wider">
