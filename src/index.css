@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --font-poppins: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-stylised: "zooja-pro", "Caveat", cursive, sans-serif;
+  --color-wb-navy: #001028;
+  --color-wb-dark: #000F29;
+  --color-wb-slate: #19273D;
+  --color-wb-cream: #FFF7EE;
+  --color-wb-red: #EB0F2D;
+  --color-wb-blue: #0F6EB6;
+}
+
+body {
+  font-family: var(--font-poppins);
+  color: #001028;
+  background-color: #000F29;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+
+.font-stylised, .stylised, .tk-zooja-pro {
+  font-family: var(--font-stylised);
+}
+
+.text-stroke-outline {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+  color: transparent;
+}
+
+.text-stroke-outline-dark {
+  -webkit-text-stroke: 2px rgba(0, 16, 40, 0.25);
+  color: transparent;
+}
+
+/* Perspective utilities for 3D scrolling */
+.perspective-800 {
+  perspective: 800px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Smooth kinetic marquee animations */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 28s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 28s linear infinite;
+}
+
+.animate-marquee-left-fast {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 20s linear infinite;
+}
+
+.animate-marquee-right-fast {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 20s linear infinite;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000F29;
+}
+::-webkit-scrollbar-thumb {
+  background: #19273D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #EB0F2D;
+}

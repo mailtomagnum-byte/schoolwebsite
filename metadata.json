@@ -1,0 +1,6 @@
+{
+  "name": "Indian School Muladha | Sultanate of Oman",
+  "description": "Redesigned official portal of Indian School Muladha (ISML), Sultanate of Oman. Featuring world-class 3D scrolling effects, immersive campus explorations, academic excellence, and CBSE curricula.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
