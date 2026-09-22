@@ -1,17 +1,29 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Calendar, ArrowRight, Bell } from 'lucide-react';
-import { LATEST_NEWS_WOODBRIDGE } from '../data/schoolData';
+import { Calendar, ArrowRight, Bell, Sparkles } from 'lucide-react';
+import { useCrm } from '../context/CrmContext';
 
 interface WoodbridgeNewsBlocksProps {
   onOpenAdmissions: () => void;
+  onOpenCrm?: () => void;
 }
 
 export const WoodbridgeNewsBlocks: React.FC<WoodbridgeNewsBlocksProps> = ({
   onOpenAdmissions,
+  onOpenCrm,
 }) => {
-  const featuredItem = LATEST_NEWS_WOODBRIDGE[0];
-  const stackedItems = LATEST_NEWS_WOODBRIDGE.slice(1);
+  const { news } = useCrm();
+
+  const featuredItem = news.find((item) => item.featured) || news[0] || {
+    id: 'fallback-1',
+    title: 'Registrations Open for Academic Session 2026-2027: KG to Grade XI',
+    category: 'Admissions Open',
+    date: 'Sep 2026',
+    excerpt: 'Admissions are now open for Indian School Muladha across all academic wings.',
+    image: '/assets/isml/original_school_campus.jpg',
+  };
+
+  const stackedItems = news.filter((item) => item.id !== featuredItem.id).slice(0, 3);
 
   return (
     <section id="news" className="bg-[#FFF7EE] text-[#001028] py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-black/5">
@@ -20,23 +32,40 @@ export const WoodbridgeNewsBlocks: React.FC<WoodbridgeNewsBlocksProps> = ({
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-[#EB0F2D] font-bold block mb-3 font-poppins">
-              Gazette & Updates
-            </span>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#EB0F2D] font-bold font-poppins">
+                Gazette & Updates
+              </span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#EB0F2D]/10 text-[#EB0F2D]">
+                Dynamic CRM Powered
+              </span>
+            </div>
             <h2 className="font-poppins text-3xl sm:text-5xl font-bold tracking-tight text-[#001028]">
               Latest news and stories
             </h2>
           </div>
 
-          <a
-            href="https://isml-oman.com"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#EB0F2D] hover:text-[#001028] transition-colors"
-          >
-            <span>View All School Circulars</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
+          <div className="flex items-center gap-3">
+            {onOpenCrm && (
+              <button
+                onClick={onOpenCrm}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/5 hover:bg-black/10 text-xs font-semibold text-[#001028] transition-colors"
+                title="Open Administrative CRM"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-[#EB0F2D]" />
+                <span>Admin CMS</span>
+              </button>
+            )}
+            <a
+              href="https://isml-oman.com"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#EB0F2D] hover:text-[#001028] transition-colors"
+            >
+              <span>View All Circulars</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
 
         {/* Featured + Stacked News Grid */}
@@ -46,7 +75,7 @@ export const WoodbridgeNewsBlocks: React.FC<WoodbridgeNewsBlocksProps> = ({
           <div className="lg:col-span-7 bg-white rounded-3xl overflow-hidden shadow-xl border border-black/5 flex flex-col group hover:-translate-y-1 transition-all duration-300">
             <div className="aspect-[16/10] overflow-hidden relative">
               <img
-                src={featuredItem.image}
+                src={featuredItem.image || '/assets/isml/original_school_campus.jpg'}
                 alt={featuredItem.title}
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -68,7 +97,7 @@ export const WoodbridgeNewsBlocks: React.FC<WoodbridgeNewsBlocksProps> = ({
                 </h3>
 
                 <p className="text-sm sm:text-base text-[#19273D]/80 leading-relaxed font-light mb-6">
-                  {featuredItem.excerpt}
+                  {featuredItem.excerpt || featuredItem.summary}
                 </p>
               </div>
 
@@ -100,7 +129,7 @@ export const WoodbridgeNewsBlocks: React.FC<WoodbridgeNewsBlocksProps> = ({
                   </h4>
 
                   <p className="text-xs text-[#19273D]/70 leading-relaxed line-clamp-2 font-light mb-4">
-                    {item.excerpt}
+                    {item.excerpt || item.summary}
                   </p>
                 </div>
 
@@ -115,7 +144,7 @@ export const WoodbridgeNewsBlocks: React.FC<WoodbridgeNewsBlocksProps> = ({
             <div className="p-6 rounded-2xl bg-[#001028] text-white shadow-xl flex items-center justify-between gap-4 mt-auto">
               <div className="space-y-1">
                 <span className="text-[11px] font-bold uppercase tracking-widest text-[#c5a059] block">
-                  Admissions 2025-26
+                  Admissions 2026-27
                 </span>
                 <p className="text-sm font-semibold text-white">
                   Limited seats available in Science & Commerce.
@@ -136,3 +165,4 @@ export const WoodbridgeNewsBlocks: React.FC<WoodbridgeNewsBlocksProps> = ({
     </section>
   );
 };
+

@@ -19,6 +19,7 @@ import {
 import confetti from 'canvas-confetti';
 import { SCHOOL_INFO, SENIOR_STREAMS } from '../data/schoolData';
 import { Crest3D } from './Crest3D';
+import { useCrm } from '../context/CrmContext';
 
 interface AdmissionsModalProps {
   isOpen: boolean;
@@ -29,6 +30,7 @@ export const AdmissionsModal: React.FC<AdmissionsModalProps> = ({
   isOpen,
   onClose,
 }) => {
+  const { addLead } = useCrm();
   const [step, setStep] = useState<number>(1);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [appId, setAppId] = useState<string>('');
@@ -71,6 +73,21 @@ export const AdmissionsModal: React.FC<AdmissionsModalProps> = ({
     e.preventDefault();
     const generatedId = `ISML-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
     setAppId(generatedId);
+
+    // Automatically synchronize into CRM Admissions Pipeline
+    addLead({
+      studentName: studentName || 'Applicant Student',
+      parentName: parentName || 'Parent / Guardian',
+      email: email || 'parent@mail.com',
+      phone: phone || '+968 9000 0000',
+      gradeApplying: isSeniorGrade ? `${grade} (${selectedStream.toUpperCase()})` : grade,
+      academicYear: '2026-2027',
+      preferredDate: visitDate || new Date().toISOString().split('T')[0],
+      notes: `Bus route: ${busRoute}. DOB: ${dob || 'N/A'}. Gender: ${gender}. Ref code: ${generatedId}`,
+      status: 'New',
+      source: 'Website Visit Form',
+    });
+
     setIsSubmitted(true);
 
     confetti({

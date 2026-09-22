@@ -76,3 +76,69 @@ export interface NewsItem {
   image?: string;
   featured?: boolean;
 }
+
+export interface FacultyMember {
+  name: string;
+  qualification: string;
+  department: string;
+  designation: string;
+}
+
+export interface SMCMember {
+  name: string;
+  designation: string;
+  subcommittee?: string;
+  qualification?: string;
+}
+
+export interface AgeCriteria {
+  className: string;
+  bornBetween: string;
+  minAge: string;
+  maxAge: string;
+}
+
+export interface BoardResultRecord {
+  year: string;
+  registered: number;
+  passed: number;
+  percentage: string;
+  remarks: string;
+}
+
+export type LeadStatus = 'New' | 'In Review' | 'Tour Scheduled' | 'Document Verification' | 'Admitted' | 'Declined';
+
+export interface AdmissionLead {
+  id: string;
+  studentName: string;
+  parentName: string;
+  email: string;
+  phone: string;
+  gradeApplying: string;
+  academicYear: string;
+  preferredDate?: string;
+  notes?: string;
+  status: LeadStatus;
+  submissionDate: string;
+  source: 'Website Visit Form' | 'Online Prospectus' | 'Walk-In' | 'Phone Enquiry';
+  followUpDate?: string;
+}
+
+export interface StudentPersona {
+  id: string;
+  name: string;
+  title: string;
+  category: string;
+  image: string;
+  quote: string;
+  description: string;
+}
+
+export interface UrgentAnnouncement {
+  enabled: boolean;
+  badge: string;
+  message: string;
+  linkText?: string;
+  linkUrl?: string;
+  type: 'admissions' | 'urgent' | 'academic';
+}

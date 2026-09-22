@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
-import { Compass, Video, ArrowDown } from 'lucide-react';
+import { motion, useScroll, useTransform, useSpring } from 'motion/react';
+import { Compass, Video } from 'lucide-react';
 
 interface WoodbridgeShieldMaskProps {
   onOpenVirtualTour: () => void;
@@ -13,35 +13,49 @@ export const WoodbridgeShieldMask: React.FC<WoodbridgeShieldMaskProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Track scroll progress within this 200vh container
+  // Track scroll progress within this sticky section
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end end'],
   });
 
-  // Vertical red line extends downwards then fades
-  const lineHeight = useTransform(scrollYProgress, [0, 0.25], ['0%', '100%']);
-  const lineOpacity = useTransform(scrollYProgress, [0.25, 0.35], [1, 0]);
+  // Spring smoothing physics to eliminate discrete wheel tick vibration and jitter
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 24,
+    mass: 0.15,
+    restDelta: 0.0005,
+  });
 
-  // Shield mask scale: starts at 1, rapidly zooms to 60x creating the 3D fly-through portal
-  const maskScale = useTransform(scrollYProgress, [0.15, 0.75], [1, 55]);
-  const contentOpacity = useTransform(scrollYProgress, [0.55, 0.85], [0, 1]);
-  const contentY = useTransform(scrollYProgress, [0.55, 0.85], [40, 0]);
+  // Vertical red line extends downwards then smoothly fades
+  const lineHeight = useTransform(smoothProgress, [0, 0.22], ['0%', '100%']);
+  const lineOpacity = useTransform(smoothProgress, [0.22, 0.32], [1, 0]);
+
+  // Shield mask scale: starts at 1, smoothly expands to 18x while fading out into full view
+  const maskScale = useTransform(smoothProgress, [0.08, 0.65], [1, 18]);
+  const maskOpacity = useTransform(smoothProgress, [0.42, 0.68], [1, 0]);
+  
+  // Content card fades and rises gracefully
+  const contentOpacity = useTransform(smoothProgress, [0.52, 0.82], [0, 1]);
+  const contentY = useTransform(smoothProgress, [0.52, 0.82], [30, 0]);
 
   return (
     <div
+      id="campus-portal"
       ref={containerRef}
-      className="relative h-[220vh] bg-[#000F29] select-none"
+      className="relative h-[165vh] bg-[#000F29] select-none"
     >
-      {/* Pinned Sticky Window (100vh) */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+      {/* Pinned Sticky Window with GPU compositing isolation */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center [contain:paint]">
         
-        {/* Background Campus Panorama revealed through the Shield aperture */}
+        {/* Background Campus Panorama revealed through the Shield aperture from original school photo */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/assets/isml/main_gate.jpg"
-            alt="Indian School Muladha Campus Main Gate"
-            className="w-full h-full object-cover filter brightness-[0.88] contrast-[1.05]"
+            src="/assets/isml/original_school_campus.jpg"
+            alt="Indian School Muladha Authentic 30-Acre Campus and Sports Grounds"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover filter brightness-[0.92] contrast-[1.04] transition-transform duration-700 ease-out"
+            style={{ transform: 'translateZ(0)' }}
           />
           {/* Subtle gradient vignette */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#000F29]/80 via-transparent to-[#000F29]/40" />
@@ -55,16 +69,23 @@ export const WoodbridgeShieldMask: React.FC<WoodbridgeShieldMaskProps> = ({
           />
         </div>
 
-        {/* 3D Shield Aperture Mask (Woodbridge School Signature Mask Effect) */}
+        {/* 3D Shield Aperture Mask (Smooth hardware-accelerated aperture zoom) */}
         <motion.div
-          style={{ scale: maskScale }}
-          className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center will-change-transform"
+          style={{
+            scale: maskScale,
+            opacity: maskOpacity,
+            willChange: 'transform, opacity',
+            transform: 'translate3d(0, 0, 0)',
+            backfaceVisibility: 'hidden'
+          }}
+          className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center"
         >
-          {/* Large SVG overlay with transparent shield cutout aperture */}
+          {/* SVG overlay with transparent shield cutout aperture */}
           <svg
             viewBox="0 0 4519 2542"
             preserveAspectRatio="xMidYMid slice"
             className="w-full h-full"
+            style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
           >
             <path
               d="M4519,0 L4519,2541.9 L0,2541.9 L0,0 L4519,0 Z M2298.5,1228.6 L2223.1,1228.6 L2222.6,1267 C2222.6,1279.2 2226.5,1290.3 2232.7,1298.6 L2233.1,1299.2 L2233.4,1299.5 C2240.8,1308.8 2260,1315.4 2260.8,1315.7 C2261.6,1316 2282.5,1308.3 2289.3,1298.5 C2295.2,1290 2298.8,1278.8 2298.8,1266.5 L2298.5,1228.6 Z"

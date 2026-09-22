@@ -71,8 +71,8 @@ export const WoodbridgeFeaturedStrip: React.FC<WoodbridgeFeaturedStripProps> = (
               {/* Main Feature / Video Card */}
               <div className="relative rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.8)] border border-white/15 aspect-[16/10] group">
                 <img
-                  src="/assets/isml/main_gate.jpg"
-                  alt="Indian School Muladha Campus Main Gate"
+                  src="/assets/isml/original_school_campus.jpg"
+                  alt="Indian School Muladha Authentic 30-Acre Campus Grounds"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
                 />
@@ -105,7 +105,7 @@ export const WoodbridgeFeaturedStrip: React.FC<WoodbridgeFeaturedStripProps> = (
               {/* Overlapping Staggered Secondary Image 1 (Top Right) */}
               <div className="hidden sm:block absolute -top-8 -right-6 w-44 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 aspect-[3/4] rotate-3 hover:rotate-0 transition-transform duration-300">
                 <img
-                  src="/assets/isml/students_activity.jpg"
+                  src="/assets/isml/student_stem_robotics.jpg"
                   alt="ISML Students in Science & Innovation Activity"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
@@ -115,7 +115,7 @@ export const WoodbridgeFeaturedStrip: React.FC<WoodbridgeFeaturedStripProps> = (
               {/* Overlapping Staggered Secondary Image 2 (Bottom Left) */}
               <div className="hidden sm:block absolute -bottom-8 -left-6 w-48 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 aspect-[4/3] -rotate-3 hover:rotate-0 transition-transform duration-300">
                 <img
-                  src="/assets/isml/students_group.jpg"
+                  src="/assets/isml/student_leader_speech.jpg"
                   alt="ISML Student Leaders Group"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"

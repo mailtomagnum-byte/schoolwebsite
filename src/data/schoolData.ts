@@ -27,7 +27,7 @@ export const STUDENT_PERSONAS = [
     name: "Aryan",
     title: "Expert Scientist",
     category: "STEM & Robotics",
-    image: "/assets/isml/students_activity.jpg",
+    image: "/assets/isml/student_stem_robotics.jpg",
     quote: "Building autonomous systems in the ISML science lab gave me the confidence to present at the Oman Science Festival.",
     description: "CBSE Science Congress finalist & student president of the Innovation Club."
   },
@@ -36,7 +36,7 @@ export const STUDENT_PERSONAS = [
     name: "Fatima",
     title: "Inspiring Leader",
     category: "Debate & Model UN",
-    image: "/assets/isml/students_group.jpg",
+    image: "/assets/isml/student_leader_speech.jpg",
     quote: "On our 30-acre campus, leadership is forged through collaboration, house captaincy, and community projects.",
     description: "Head Girl & Best Delegate at the Oman Inter-School Model United Nations."
   },
@@ -45,7 +45,7 @@ export const STUDENT_PERSONAS = [
     name: "Rohan",
     title: "Academic Scholar",
     category: "CBSE Pre-University",
-    image: "/assets/isml/senior_wing.jpg",
+    image: "/assets/isml/campus_academic_quad.jpg",
     quote: "Every teacher invested in my curiosity, guiding me to top percentiles in CBSE Board examinations.",
     description: "98.6% CBSE Board aggregate holder with distinctions in Mathematics and Physics."
   },
@@ -132,7 +132,7 @@ export const SCHOOL_STAGES_LIST: SchoolStage[] = [
     years: "Grades 1 to 5",
     tagline: "Foundations of inquiry & conceptual growth",
     description: "Experiential inquiry-driven learning featuring language mastery (English, Hindi, Arabic), computational logic, and environmental science.",
-    image: "/assets/isml/foundation_wing.jpg",
+    image: "/assets/isml/campus_hero_entrance.jpg",
     age: "Ages 6 to 10",
     linkText: "Explore Primary Wing"
   },
@@ -152,7 +152,7 @@ export const SCHOOL_STAGES_LIST: SchoolStage[] = [
     years: "Grades 9 to 12",
     tagline: "Academic distinction & global university readiness",
     description: "Rigorous CBSE Board preparation in Science and Commerce streams with structured guidance for competitive exams and university admissions.",
-    image: "/assets/isml/senior_wing.jpg",
+    image: "/assets/isml/campus_academic_quad.jpg",
     age: "Ages 14 to 18",
     linkText: "Senior Pathways"
   }
@@ -164,7 +164,7 @@ export const FEATURE_BLOCKS = [
     title: "Academic excellence",
     copy: "Students gain the knowledge, skills, qualifications and results to make their choices become reality. 100% CBSE pass rate with regional top percentiles.",
     linkText: "Be your best",
-    image: "/assets/isml/senior_wing.jpg",
+    image: "/assets/isml/campus_academic_quad.jpg",
     accent: "#EB0F2D"
   },
   {
@@ -189,7 +189,7 @@ export const HEAD_LEADERSHIP = {
   name: "Dr. Nayer Iqbal",
   title: "Principal & Head of Institution",
   qualifications: "M.Sc., B.Ed., Ph.D.",
-  image: "/assets/isml/principal_dr_nayer.jpg",
+  image: "/assets/isml/principal_leadership.jpg",
   quote: "Welcome to Indian School Muladha. Learn more about our ethos, our academic standards and the dedicated people helping our students to become confident, ethical global leaders.",
   linkText: "Meet our staff and management committee",
   description: "At Indian School Muladha, we believe that education is not merely the accumulation of facts, but the ignition of innate human potential. For over three decades, our 30-acre campus has stood as a beacon of academic distinction in South Batinah, nurturing generations of doctorates, engineers, diplomats, and responsible global citizens."

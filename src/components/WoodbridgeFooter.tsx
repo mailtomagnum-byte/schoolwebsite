@@ -1,17 +1,22 @@
 import React from 'react';
-import { ArrowUp, MapPin, Phone, Mail, ExternalLink, ShieldCheck, Heart } from 'lucide-react';
+import { ArrowUp, MapPin, Phone, Mail, ExternalLink, ShieldCheck, Heart, FileText, Users, DollarSign, FileCheck, Briefcase } from 'lucide-react';
 import { SCHOOL_INFO } from '../data/schoolData';
+import { InternalPageTab } from './InternalPageViewer';
 
 interface WoodbridgeFooterProps {
   onOpenAdmissions: () => void;
   onOpenProspectus: () => void;
   onOpenVirtualTour: () => void;
+  onOpenInternalPage?: (tab: InternalPageTab) => void;
+  onOpenCrm?: () => void;
 }
 
 export const WoodbridgeFooter: React.FC<WoodbridgeFooterProps> = ({
   onOpenAdmissions,
   onOpenProspectus,
   onOpenVirtualTour,
+  onOpenInternalPage,
+  onOpenCrm,
 }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -89,84 +94,119 @@ export const WoodbridgeFooter: React.FC<WoodbridgeFooterProps> = ({
             <div className="space-y-2 text-xs text-white/80">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#EB0F2D] flex-shrink-0 mt-0.5" />
-                <span>{SCHOOL_INFO.address}</span>
+                <span>P.O. Box 42, Postal Code 314, Al Muladha, South Batinah, Sultanate of Oman</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#EB0F2D] flex-shrink-0" />
-                <span>{SCHOOL_INFO.phone}</span>
+                <span>+968 26811234 / +968 26811184</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#EB0F2D] flex-shrink-0" />
-                <span>{SCHOOL_INFO.email}</span>
+                <span>ismloman@gmail.com</span>
               </div>
             </div>
           </div>
 
-          {/* Col 2: Educational Stages (2 cols) */}
+          {/* Col 2: Internal Pages Directory (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
             <h5 className="font-poppins text-xs font-bold uppercase tracking-[0.2em] text-[#c5a059] border-b border-white/10 pb-2">
-              School Stages
+              Statutory & Governance
             </h5>
             <ul className="space-y-2.5 text-xs text-white/70">
               <li>
-                <a href="#stages" className="hover:text-[#EB0F2D] transition-colors">
-                  Early Years & Kindergarten (KG I & II)
-                </a>
+                <button
+                  onClick={() => onOpenInternalPage?.('mandatory-disclosure')}
+                  className="hover:text-[#EB0F2D] transition-colors text-left flex items-center gap-1.5"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#c5a059]" />
+                  <span>CBSE Mandatory Disclosure (SARAS)</span>
+                </button>
               </li>
               <li>
-                <a href="#stages" className="hover:text-[#EB0F2D] transition-colors">
-                  Primary Wing (Grades 1 to 5)
-                </a>
+                <button
+                  onClick={() => onOpenInternalPage?.('management')}
+                  className="hover:text-[#EB0F2D] transition-colors text-left flex items-center gap-1.5"
+                >
+                  <Users className="w-3.5 h-3.5 text-[#c5a059]" />
+                  <span>School Management Committee (SMC)</span>
+                </button>
               </li>
               <li>
-                <a href="#stages" className="hover:text-[#EB0F2D] transition-colors">
-                  Middle School (Grades 6 to 8)
-                </a>
+                <button
+                  onClick={() => onOpenInternalPage?.('faculty')}
+                  className="hover:text-[#EB0F2D] transition-colors text-left flex items-center gap-1.5"
+                >
+                  <span>Faculty Directory (94 Teachers)</span>
+                </button>
               </li>
               <li>
-                <a href="#stages" className="hover:text-[#EB0F2D] transition-colors">
-                  Secondary & Senior Secondary (9-12)
-                </a>
+                <button
+                  onClick={() => onOpenInternalPage?.('results')}
+                  className="hover:text-[#EB0F2D] transition-colors text-left flex items-center gap-1.5"
+                >
+                  <span>Class X & XII 100% Board Results</span>
+                </button>
               </li>
               <li>
-                <a href="#stages" className="hover:text-[#EB0F2D] transition-colors">
-                  Senior Science & Commerce Streams
-                </a>
+                <button
+                  onClick={() => onOpenInternalPage?.('infrastructure')}
+                  className="hover:text-[#EB0F2D] transition-colors text-left flex items-center gap-1.5"
+                >
+                  <span>30-Acre Campus & 148 Classrooms</span>
+                </button>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Admissions & Visits (3 cols) */}
+          {/* Col 3: Admissions & Portals (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
             <h5 className="font-poppins text-xs font-bold uppercase tracking-[0.2em] text-[#c5a059] border-b border-white/10 pb-2">
-              Admissions & Visits
+              Admissions & Student Portals
             </h5>
             <ul className="space-y-2.5 text-xs text-white/70">
               <li>
-                <button onClick={onOpenAdmissions} className="hover:text-[#EB0F2D] transition-colors text-left">
-                  Apply for Admissions 2025-26
+                <button
+                  onClick={() => onOpenInternalPage?.('admissions')}
+                  className="hover:text-[#EB0F2D] transition-colors text-left flex items-center gap-1.5"
+                >
+                  <FileText className="w-3.5 h-3.5 text-[#EB0F2D]" />
+                  <span>Admission Guidelines & Age Matrix</span>
                 </button>
               </li>
               <li>
-                <button onClick={onOpenProspectus} className="hover:text-[#EB0F2D] transition-colors text-left">
-                  Download Digital Prospectus
+                <button
+                  onClick={() => onOpenInternalPage?.('fee-structure')}
+                  className="hover:text-[#EB0F2D] transition-colors text-left flex items-center gap-1.5"
+                >
+                  <DollarSign className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Fee Structure 2026-27 Circular</span>
                 </button>
               </li>
               <li>
-                <button onClick={onOpenVirtualTour} className="hover:text-[#EB0F2D] transition-colors text-left">
-                  Interactive 3D Virtual Tour
+                <button
+                  onClick={() => onOpenInternalPage?.('transfer-certificate')}
+                  className="hover:text-[#EB0F2D] transition-colors text-left flex items-center gap-1.5"
+                >
+                  <FileCheck className="w-3.5 h-3.5 text-[#c5a059]" />
+                  <span>Online TC Verification Portal</span>
                 </button>
               </li>
               <li>
-                <button onClick={onOpenAdmissions} className="hover:text-[#EB0F2D] transition-colors text-left">
-                  Book an Individual Campus Tour
+                <button
+                  onClick={() => onOpenInternalPage?.('careers')}
+                  className="hover:text-[#EB0F2D] transition-colors text-left flex items-center gap-1.5"
+                >
+                  <Briefcase className="w-3.5 h-3.5 text-white/50" />
+                  <span>Careers & Active Tenders</span>
                 </button>
               </li>
               <li>
-                <a href="https://isml-oman.com" target="_blank" rel="noreferrer" className="hover:text-[#EB0F2D] transition-colors flex items-center gap-1">
-                  <span>Parent Portal & Fee System</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <button
+                  onClick={() => onOpenInternalPage?.('contact')}
+                  className="hover:text-[#EB0F2D] transition-colors text-left flex items-center gap-1.5"
+                >
+                  <span>Grievance Redressal System</span>
+                </button>
               </li>
             </ul>
           </div>
@@ -179,11 +219,11 @@ export const WoodbridgeFooter: React.FC<WoodbridgeFooterProps> = ({
             <div className="space-y-3 text-xs text-white/70">
               <p>
                 <strong className="text-white block font-medium">CBSE Affiliation:</strong>
-                No. 6130009
+                No. 6130007
               </p>
               <p>
                 <strong className="text-white block font-medium">School Code:</strong>
-                90076
+                90170
               </p>
               <p className="text-[11px] text-white/50 pt-2 border-t border-white/10">
                 Approved by Ministry of Education, Sultanate of Oman.
@@ -198,7 +238,19 @@ export const WoodbridgeFooter: React.FC<WoodbridgeFooterProps> = ({
           <div className="flex flex-wrap items-center gap-2 text-center sm:text-left">
             <span>© {new Date().getFullYear()} Indian School Muladha, Sultanate of Oman. All Rights Reserved.</span>
             <span>•</span>
-            <span>Redesigned in the Architectural Heritage of Woodbridge School</span>
+            <span>100% Content Parity with isml-oman.com</span>
+            {onOpenCrm && (
+              <>
+                <span>•</span>
+                <button
+                  onClick={onOpenCrm}
+                  className="text-[#c5a059] hover:underline font-semibold flex items-center gap-1"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  <span>Admin CRM & CMS</span>
+                </button>
+              </>
+            )}
           </div>
 
           <button

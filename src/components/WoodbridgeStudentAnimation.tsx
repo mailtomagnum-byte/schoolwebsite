@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
-import { STUDENT_PERSONAS } from '../data/schoolData';
+import { useCrm } from '../context/CrmContext';
 
 interface WoodbridgeStudentAnimationProps {
   onOpenAdmissions: () => void;
@@ -10,24 +10,29 @@ interface WoodbridgeStudentAnimationProps {
 export const WoodbridgeStudentAnimation: React.FC<WoodbridgeStudentAnimationProps> = ({
   onOpenAdmissions,
 }) => {
+  const { studentPersonas } = useCrm();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const activeStudent = STUDENT_PERSONAS[currentIndex];
+
+  const activeStudent = studentPersonas[currentIndex] || studentPersonas[0];
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % STUDENT_PERSONAS.length);
+    setCurrentIndex((prev) => (prev + 1) % studentPersonas.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + STUDENT_PERSONAS.length) % STUDENT_PERSONAS.length);
+    setCurrentIndex((prev) => (prev - 1 + studentPersonas.length) % studentPersonas.length);
   };
 
   // Optional subtle auto-rotation if untouched
   useEffect(() => {
+    if (studentPersonas.length === 0) return;
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % STUDENT_PERSONAS.length);
+      setCurrentIndex((prev) => (prev + 1) % studentPersonas.length);
     }, 6500);
     return () => clearInterval(timer);
-  }, []);
+  }, [studentPersonas.length]);
+
+  if (!activeStudent) return null;
 
   return (
     <section
@@ -118,7 +123,7 @@ export const WoodbridgeStudentAnimation: React.FC<WoodbridgeStudentAnimationProp
         
         {/* Persona Selectors (Tab buttons) */}
         <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-2 sm:pb-0">
-          {STUDENT_PERSONAS.map((persona, idx) => (
+          {studentPersonas.map((persona, idx) => (
             <button
               key={persona.id}
               onClick={() => setCurrentIndex(idx)}
